@@ -14,7 +14,7 @@ data = csv.reader(open(csvFilename, 'rb'))
 for row in data:
 	start_time = float(row[10])
 	duration = float(row[11])
-	if duration > 8:
-		duration = 200
+	if duration > THRESHOLD:
+		duration = DEFAULT_DURATION
 
 	outputFile.write(str(start_time) + "," + str(duration) + "\n")	
